@@ -8,7 +8,8 @@ This project is in its early stages and currently supports a single test command
 
 ## ✨ Features
 
-- `!ping` → replies with `pong!`
+- `!Bhelp` → replies with a list of command
+- `!Bping` → replies with `pong!`
 
 More utilities and fun commands coming soon!
 
@@ -50,10 +51,12 @@ No license specified yet. You are free to use, modify, and contribute for now.
 
 BitByte è un bot Discord scritto in Java con la libreria JDA.
 
-# Funzionalità
-!ping → risponde con pong!
+# ✨ Funzionalità
 
-# Esecuzione
+- `!Bhelp` → risponde con una lista dei comandi
+- `!Bping` → risponde con pong!
+
+# 🚀 Esecuzione
 
 1. Clona il repository
 

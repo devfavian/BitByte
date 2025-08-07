@@ -1,12 +1,15 @@
 package listeners;
 
 import commands.PingCommand;
+import commands.HelpCommand;
+
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class BotListener extends ListenerAdapter{
 	
 	private final PingCommand pingCommand = new PingCommand();
+	private final HelpCommand helpCommand = new HelpCommand();
 	
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -24,11 +27,13 @@ public class BotListener extends ListenerAdapter{
 //        System.out.println("DEBUG isSuppressed: " + event.getMessage().isSuppressedEmbeds());
 //        System.out.println("DEBUG raw JSON: " + event.getMessage().getContentStripped());
 
+        if (message.equalsIgnoreCase("!Bhelp")) {
+        	helpCommand.handle(event);
+        }
 
-        if (message.equalsIgnoreCase("!ping")) {
-        	//DEBUG
-        	//        	System.out.println("Comando ping riconosciuto!");
+        if (message.equalsIgnoreCase("!Bping")) {
             pingCommand.handle(event);
         }
+        
     }
 }
