@@ -1,15 +1,24 @@
 package listeners;
 
 import commands.PingCommand;
-import commands.HelpCommand;
 
+import java.time.OffsetDateTime;
+import java.util.List;
+
+import commands.HelpCommand;
+import commands.UserinfoCommand;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.utils.ImageProxy;
 
 public class BotListener extends ListenerAdapter{
 	
 	private final PingCommand pingCommand = new PingCommand();
 	private final HelpCommand helpCommand = new HelpCommand();
+	private final UserinfoCommand userinfoCommand = new UserinfoCommand();
 	
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -33,6 +42,10 @@ public class BotListener extends ListenerAdapter{
 
         if (message.equalsIgnoreCase("!Bping")) {
             pingCommand.handle(event);
+        }
+        
+        if (message.equalsIgnoreCase("!Buserinfo")) {
+        	userinfoCommand.handle(event);
         }
         
     }

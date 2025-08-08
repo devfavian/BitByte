@@ -1,0 +1,4 @@
+08/08/2025
+- I learned how embeds work.
+- I created !Buserinfo command.
+- I had troubles with reaction and roles.

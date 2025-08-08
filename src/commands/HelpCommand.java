@@ -8,6 +8,7 @@ public class HelpCommand implements Command {
         event.getChannel().sendMessage("Commands:\n"
         		+ "\n"
         		+ "!Bhelp\n"
-        		+ "!Bping").queue();
+        		+ "!Bping\n"
+        		+ "!Buserinfo").queue();
     }
 }
