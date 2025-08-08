@@ -24,7 +24,13 @@ public class UserinfoCommand implements Command {
 		embed.setTitle("User info");
 		embed.setThumbnail(avatar);
 		embed.addField("Username", name + " (" + ID + ")", false);
-		embed.addField("Nickname", nick, false);
+		
+		if (nick == null || nick.isEmpty()) {
+		    embed.addField("Nickname", "None", false);
+		} else {
+		    embed.addField("Nickname", nick, false);
+		}
+		
 		embed.addField("Status", status.toString(), false);
 		embed.addField("When Created", TimeC.getDayOfMonth() + "-" + TimeC.getMonthValue() + "-" + TimeC.getYear(), false);
 		embed.addField("When Joined", TimeJ.getDayOfMonth() + "-" + TimeJ.getMonthValue() + "-" + TimeJ.getYear(), false);
