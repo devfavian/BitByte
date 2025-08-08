@@ -1,16 +1,15 @@
 package listeners;
 
-import commands.PingCommand;
-
-
-import commands.HelpCommand;
-import commands.UserinfoCommand;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import usercommands.HelpCommand;
+import usercommands.PingCommand;
+import usercommands.UserinfoCommand;
+import admincommands.ClearCommand;
 import utils.SetRole;
 import utils.WelcomeUtils;
 
@@ -19,6 +18,7 @@ public class BotListener extends ListenerAdapter{
 	private final PingCommand pingCommand = new PingCommand();
 	private final HelpCommand helpCommand = new HelpCommand();
 	private final UserinfoCommand userinfoCommand = new UserinfoCommand();
+	private final ClearCommand clearCommand = new ClearCommand();
 	
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
@@ -56,6 +56,10 @@ public class BotListener extends ListenerAdapter{
         
         if (message.equalsIgnoreCase("!Buserinfo")) {
         	userinfoCommand.handle(event);
+        }
+        
+        if (message.startsWith("!Bclear")) {
+        	clearCommand.handle(event);
         }
         
     }

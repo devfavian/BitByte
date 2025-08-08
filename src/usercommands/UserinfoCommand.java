@@ -1,6 +1,7 @@
-package commands;
+package usercommands;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import utils.Command;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import java.time.OffsetDateTime;
