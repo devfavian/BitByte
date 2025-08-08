@@ -1,4 +1,11 @@
 08/08/2025
 - I learned how embeds work.
-- I created !Buserinfo command.
-- I had troubles with reaction and roles.
+- I created the !Buserinfo command.
+- I had troubles with reactions and role assignment.
+- I learned how GuildMemberJoin works and, in general, what a Guild is.
+- I created a welcome message feature.
+- I created an auto-role assignment on member join feature.
+- I improved code organization using utility classes.
+- I explored permission issues related to role hierarchy.
+- I tested real user joining behavior (with a friend).
+- I practiced basic debugging using System.out.println().

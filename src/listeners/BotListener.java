@@ -2,23 +2,33 @@ package listeners;
 
 import commands.PingCommand;
 
-import java.time.OffsetDateTime;
-import java.util.List;
 
 import commands.HelpCommand;
 import commands.UserinfoCommand;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.utils.ImageProxy;
+import utils.SetRole;
+import utils.WelcomeUtils;
 
 public class BotListener extends ListenerAdapter{
 	
 	private final PingCommand pingCommand = new PingCommand();
 	private final HelpCommand helpCommand = new HelpCommand();
 	private final UserinfoCommand userinfoCommand = new UserinfoCommand();
+	
+	@Override
+	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
+		Member membro = event.getMember();
+		MessageEmbed embed = WelcomeUtils.formatWelcomeMessage(membro);
+		
+		TextChannel canale = event.getGuild().getSystemChannel();
+		if(canale != null) canale.sendMessageEmbeds(embed).queue();
+		SetRole.roleOnJoin(membro);
+	}
 	
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
@@ -27,14 +37,14 @@ public class BotListener extends ListenerAdapter{
         String message = event.getMessage().getContentRaw();
         
         //DEBUG
-//        System.out.println("DEBUG event.getMessage(): " + event.getMessage());	
-//        System.out.println("DEBUG getContentDisplay(): [" + event.getMessage().getContentDisplay() + "]");
-//        System.out.println("DEBUG getContentRaw(): [" + event.getMessage().getContentRaw() + "]");
-//        System.out.println("DEBUG getType(): " + event.getMessage().getType());
-//        System.out.println("DEBUG isFromGuild(): " + event.isFromGuild());
-//        System.out.println("DEBUG rawContent: [" + event.getMessage().getContentRaw() + "]");
-//        System.out.println("DEBUG isSuppressed: " + event.getMessage().isSuppressedEmbeds());
-//        System.out.println("DEBUG raw JSON: " + event.getMessage().getContentStripped());
+        System.out.println("DEBUG event.getMessage(): " + event.getMessage());	
+        System.out.println("DEBUG getContentDisplay(): [" + event.getMessage().getContentDisplay() + "]");
+        System.out.println("DEBUG getContentRaw(): [" + event.getMessage().getContentRaw() + "]");
+        System.out.println("DEBUG getType(): " + event.getMessage().getType());
+        System.out.println("DEBUG isFromGuild(): " + event.isFromGuild());
+        System.out.println("DEBUG rawContent: [" + event.getMessage().getContentRaw() + "]");
+        System.out.println("DEBUG isSuppressed: " + event.getMessage().isSuppressedEmbeds());
+        System.out.println("DEBUG raw JSON: " + event.getMessage().getContentStripped());
 
         if (message.equalsIgnoreCase("!Bhelp")) {
         	helpCommand.handle(event);
