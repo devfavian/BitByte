@@ -8,8 +8,15 @@ This project is in its early stages and currently supports a single test command
 
 ## ✨ Features
 
-- `!Bhelp` → replies with a list of command
-- `!Bping` → replies with `pong!`
+- `Welcome message` → Sends a welcome message to new members
+- `Auto-role on join` → Automatically assigns one or multiple roles to new members
+
+## 📜 Commands
+
+- `!Bhelp` → Replies with a list of command
+- `!Bping` → Replies with `pong!`
+- `!Buserinfo` → → Displays information about the user
+- `!Bclear` → Deletes a specified number of messages (admin only)
 
 More utilities and fun commands coming soon!
 
