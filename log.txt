@@ -13,3 +13,5 @@
 - I separated the packages into usercommands and admincommands.
 - I created a new admincommands command, !Bclear, which deletes a specified number of messages from the channel.
 - I converted the !Bhelp command list into an embed.
+- Multiple fixes: resolved issues with !Buserinfo command for users without a nickname and other minor improvements.
+
