@@ -16,6 +16,7 @@ public class HelpCommand implements Command {
 		embed.addField("!Bclear <number_of_messages>", "Deletes a specified number of messages in a channel\n", false);
 		embed.addField("!Bavatar <mention>", "Shows the avatar of yourself or a mentioned user in high resolution\n", false);
 		embed.addField("!Bservericon", "Show the server icon", false);
+		embed.addField("!Bremind <seconds> <message>", "!Bremind <seconds> <message>\n", false);
 		
 		event.getChannel().sendMessageEmbeds(embed.build()).queue();
 }

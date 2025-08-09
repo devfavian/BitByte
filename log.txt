@@ -23,3 +23,5 @@
 - Enhanced !Buserinfo to support mentioned users.
 - Fixed username vs nickname display (uses account username + optional server nickname).
 - Minor embed cleanups for clarity.
+- Added !Bremind command: schedules reminders with embeds and user mention.
+- Immediate confirmation + delivery embed using queueAfter(); includes Discord timestamps (<t:…>).

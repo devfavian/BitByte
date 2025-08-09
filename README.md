@@ -19,6 +19,7 @@ This project is in its early stages and currently supports a single test command
 - `!Bclear` → Deletes a specified number of messages (admin only)
 - `!Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
 - `!Bservericon` → Shows the server icon in high resolution (1024px)
+- `!Bremind <seconds> <message>` → Schedules a reminder and pings you when it’s due
 
 More utilities and fun commands coming soon!
 

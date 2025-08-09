@@ -19,6 +19,7 @@ public class BotListener extends ListenerAdapter{
 	private final ClearCommand clearCommand = new ClearCommand();
 	private final AvatarCommand avatarCommand = new AvatarCommand();
 	private final ServericonCommand servericonCommand = new ServericonCommand();
+	private final RemindCommand remindCommand = new RemindCommand();
 	
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
@@ -68,6 +69,10 @@ public class BotListener extends ListenerAdapter{
         
         if (message.equalsIgnoreCase("!Bservericon")) {
         	servericonCommand.handle(event);
+        }
+        
+        if (message.startsWith("!Bremind") || message.startsWith("!bremind")) {
+        	remindCommand.handle(event);
         }
         
     }
