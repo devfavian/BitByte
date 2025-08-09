@@ -6,11 +6,8 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import usercommands.HelpCommand;
-import usercommands.PingCommand;
-import usercommands.UserinfoCommand;
-import usercommands.AvatarCommand;
-import admincommands.ClearCommand;
+import usercommands.*;
+import admincommands.*;
 import utils.SetRole;
 import utils.WelcomeUtils;
 
@@ -21,6 +18,7 @@ public class BotListener extends ListenerAdapter{
 	private final UserinfoCommand userinfoCommand = new UserinfoCommand();
 	private final ClearCommand clearCommand = new ClearCommand();
 	private final AvatarCommand avatarCommand = new AvatarCommand();
+	private final ServericonCommand servericonCommand = new ServericonCommand();
 	
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
@@ -66,6 +64,10 @@ public class BotListener extends ListenerAdapter{
         
         if (message.startsWith("!Bavatar") || message.startsWith("!bavatar")) {
         	avatarCommand.handle(event);
+        }
+        
+        if (message.equalsIgnoreCase("!Bservericon")) {
+        	servericonCommand.handle(event);
         }
         
     }

@@ -16,3 +16,4 @@
 - Multiple fixes: resolved issues with !Buserinfo command for users without a nickname and other minor improvements.
 - Created !Bavatar command to show the avatar of the command sender or a mentioned user in 1024px resolution.
 - Fixed an issue where !bclear and !bavatar didn’t work when typed in lowercase.
+- Created !Bservericon commad to show the icon of the server.
