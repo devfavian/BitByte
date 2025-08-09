@@ -60,11 +60,11 @@ public class BotListener extends ListenerAdapter{
         	userinfoCommand.handle(event);
         }
         
-        if (message.startsWith("!Bclear")) {
+        if (message.startsWith("!Bclear") || message.startsWith("!bclear")) {
         	clearCommand.handle(event);
         }
         
-        if (message.startsWith("!Bavatar")) {
+        if (message.startsWith("!Bavatar") || message.startsWith("!bavatar")) {
         	avatarCommand.handle(event);
         }
         
