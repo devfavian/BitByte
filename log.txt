@@ -1,4 +1,5 @@
-08/08/2025
+08/08/2025 - 09/08/2025
+
 - I learned how embeds work.
 - I created the !Buserinfo command.
 - I had troubles with reactions and role assignment.
@@ -17,3 +18,8 @@
 - Created !Bavatar command to show the avatar of the command sender or a mentioned user in 1024px resolution.
 - Fixed an issue where !bclear and !bavatar didn’t work when typed in lowercase.
 - Created !Bservericon commad to show the icon of the server.
+
+10/08/2025
+- Enhanced !Buserinfo to support mentioned users.
+- Fixed username vs nickname display (uses account username + optional server nickname).
+- Minor embed cleanups for clarity.

@@ -15,10 +15,10 @@ This project is in its early stages and currently supports a single test command
 
 - `!Bhelp` → Replies with a list of command
 - `!Bping` → Replies with `pong!`
-- `!Buserinfo` → → Displays information about the user
+- `!Buserinfo` → Displays information about you or a mentioned user
 - `!Bclear` → Deletes a specified number of messages (admin only)
 - `!Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
-- `!Bservericon` → Shows the server icon in high resolution (1024px).
+- `!Bservericon` → Shows the server icon in high resolution (1024px)
 
 More utilities and fun commands coming soon!
 

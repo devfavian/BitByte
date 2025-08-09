@@ -54,7 +54,7 @@ public class BotListener extends ListenerAdapter{
             pingCommand.handle(event);
         }
         
-        if (message.equalsIgnoreCase("!Buserinfo")) {
+        if (message.startsWith("!Buserinfo") || message.startsWith("!buserinfo")) {
         	userinfoCommand.handle(event);
         }
         
