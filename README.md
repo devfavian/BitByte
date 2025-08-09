@@ -17,6 +17,7 @@ This project is in its early stages and currently supports a single test command
 - `!Bping` → Replies with `pong!`
 - `!Buserinfo` → → Displays information about the user
 - `!Bclear` → Deletes a specified number of messages (admin only)
+- `!Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
 
 More utilities and fun commands coming soon!
 
