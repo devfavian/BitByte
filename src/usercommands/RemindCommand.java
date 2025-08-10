@@ -10,10 +10,18 @@ public class RemindCommand implements Command {
 		String[] args = raw.split("\\s+", 3);
 		
 		EmbedBuilder embed = new EmbedBuilder();
-		embed.setTitle("Remind me");
+		String mention = event.getMember().getAsMention();
+		String display = event.getMember().getEffectiveName();
+		String avatar  = event.getMember().getEffectiveAvatarUrl();
 		
 		if(args.length < 3) {
-			embed.setDescription("The command syntax must be -> '!Bremind <time> <mex>'");
+			embed
+			.setColor(new java.awt.Color(0xED4245))
+			.setAuthor("Reminder error — " + display, null, avatar)
+			.setTitle("⏰ Invalid syntax")
+			.addField("Usage", "`!Bremind <seconds> <message>`", false)
+			.addField("Example", "`!Bremind 60 Drink water`", false)
+			.setTimestamp(java.time.Instant.now());
 			event.getChannel().sendMessageEmbeds(embed.build()).queue();
 			return;
 		}
@@ -23,19 +31,23 @@ public class RemindCommand implements Command {
 		
 		try {
 			time = Integer.parseInt(args[1]);
-		}catch (NumberFormatException e) {
-            embed.setDescription("Time value should be a number!");
+		}catch (NumberFormatException e) {     
+            embed
+            .setColor(new java.awt.Color(0xED4245)) // red "fail"
+            .setAuthor("Reminder error — " + display, null, avatar)
+            .setTitle("⏰ Invalid time")
+            .setDescription("Time value should be a number.\n> **" + args[1] + "** is not valid.")
+            .addField("Usage", "`!Bremind <seconds> <message>`", false)
+            .addField("Example", "`!Bremind 60 Drink water`", false)
+            .setTimestamp(java.time.Instant.now());
             event.getChannel().sendMessageEmbeds(embed.build()).queue();
             return;
 		}
 		
 		
-		//graphic part
+		//correct way
 		
 		String text = args[2];
-		String mention = event.getMember().getAsMention();
-		String display = event.getMember().getEffectiveName();
-		String avatar  = event.getMember().getEffectiveAvatarUrl();
 		long whenEpoch = java.time.Instant.now().plusSeconds(time).getEpochSecond();
 
 		// 1) confirm
@@ -59,6 +71,6 @@ public class RemindCommand implements Command {
 
 		event.getChannel()
 		     .sendMessageEmbeds(deliver.build())
-		     .queueAfter(time, java.util.concurrent.TimeUnit.SECONDS);
+		     .queueAfter(time, java.util.concurrent.TimeUnit.MINUTES);
 	}
 }

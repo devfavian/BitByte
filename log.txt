@@ -25,3 +25,4 @@
 - Minor embed cleanups for clarity.
 - Added !Bremind command: schedules reminders with embeds and user mention.
 - Immediate confirmation + delivery embed using queueAfter(); includes Discord timestamps (<t:…>).
+- I'm working on graphic style of embeds.
