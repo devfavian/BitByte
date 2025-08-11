@@ -40,3 +40,4 @@
 - Through the previous step, I learned how to attach links and create buttons.
 - I refined the AvatarCommand's design, probably bringing it to its final version.
 - I discovered that embed title can not contain mentions.
+- I refined the Servericon's design, probably bringing it to its final version.

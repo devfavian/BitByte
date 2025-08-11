@@ -7,7 +7,9 @@ public class ServericonCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
 		EmbedBuilder embed = new EmbedBuilder();
-		embed.setTitle("Server Icon");
+		embed.setTitle("🖼️ Server Icon");
+		embed.setColor(new java.awt.Color(0x5865F2));
+		embed.setTimestamp(java.time.Instant.now());
 		String servericon = event.getGuild().getIconUrl();
 		
 		
@@ -20,6 +22,7 @@ public class ServericonCommand implements Command {
 		String iconQ = servericon + "?size=1024";
 		
 		embed.setImage(iconQ);
+		embed.setFooter("ByteBot • Servericon");
 		event.replyEmbeds(embed.build()).queue();
 	}
 }
