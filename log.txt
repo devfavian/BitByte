@@ -38,3 +38,5 @@
 - Removed the prefix "B" before commands.
 - I refined the HelpCommand’s design, probably bringing it to its final version.
 - Through the previous step, I learned how to attach links and create buttons.
+- I refined the AvatarCommand's design, probably bringing it to its final version.
+- I discovered that embed title can not contain mentions.
