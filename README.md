@@ -13,13 +13,13 @@ This project is in its early stages and currently supports a single test command
 
 ## 📜 Commands
 
-- `!Bhelp` → Replies with a list of command
-- `!Bping` → Replies with `pong!`
-- `!Buserinfo` → Displays information about you or a mentioned user
-- `!Bclear` → Deletes a specified number of messages (admin only)
-- `!Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
-- `!Bservericon` → Shows the server icon in high resolution (1024px)
-- `!Bremind <seconds> <message>` → Schedules a reminder and pings you when it’s due
+- `/Bhelp` → Replies with a list of command
+- `/Bping` → Replies with `pong!`
+- `/Buserinfo` → Displays information about you or a mentioned user
+- `/Bclear` → Deletes a specified number of messages (admin only)
+- `/Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
+- `/Bservericon` → Shows the server icon in high resolution (1024px)
+- `/Bremind <seconds> <message>` → Schedules a reminder and pings you when it’s due
 
 More utilities and fun commands coming soon!
 
@@ -61,10 +61,20 @@ No license specified yet. You are free to use, modify, and contribute for now.
 
 BitByte è un bot Discord scritto in Java con la libreria JDA.
 
-# ✨ Funzionalità
+## ✨ Features
 
-- `!Bhelp` → risponde con una lista dei comandi
-- `!Bping` → risponde con pong!
+- `Welcome message` → Invia un messaggio di benvenuto ai nuovi arrivati
+- `Auto-role on join` → Assegna automaticamente uno o più ruoli ai nuovi arrivati
+
+## 📜 Commands
+
+- `/Bhelp` → Risponde la lista di comandi di ByteBot
+- `/Bping` → Risponde con `pong!`
+- `/Buserinfo` → Mostra informazioni su di te o su un'altro utente
+- `/Bclear` → Elimina una certa quantità di messaggi (solo admin)
+- `/Bavatar` → Mostra il tuo avatar o quello di un'altro utente in alta risoluzione (1024px)
+- `/Bservericon` → Mostra l'icona del server in alta risoluzione (1024px)
+- `/Bremind <seconds> <message>` → Imposta un promemoria
 
 # 🚀 Esecuzione
 

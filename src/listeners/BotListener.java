@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent; // slash
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import usercommands.*;
@@ -31,49 +32,22 @@ public class BotListener extends ListenerAdapter{
 		SetRole.roleOnJoin(membro);
 	}
 	
+//    @Override
+//    public void onMessageReceived(MessageReceivedEvent event) {
+//    }
+    
     @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getAuthor().isBot()) return;
-
-        String message = event.getMessage().getContentRaw();
-        
-        //DEBUG
-        System.out.println("DEBUG event.getMessage(): " + event.getMessage());	
-        System.out.println("DEBUG getContentDisplay(): [" + event.getMessage().getContentDisplay() + "]");
-        System.out.println("DEBUG getContentRaw(): [" + event.getMessage().getContentRaw() + "]");
-        System.out.println("DEBUG getType(): " + event.getMessage().getType());
-        System.out.println("DEBUG isFromGuild(): " + event.isFromGuild());
-        System.out.println("DEBUG rawContent: [" + event.getMessage().getContentRaw() + "]");
-        System.out.println("DEBUG isSuppressed: " + event.getMessage().isSuppressedEmbeds());
-        System.out.println("DEBUG raw JSON: " + event.getMessage().getContentStripped());
-
-        if (message.equalsIgnoreCase("!Bhelp")) {
-        	helpCommand.handle(event);
-        }
-
-        if (message.equalsIgnoreCase("!Bping")) {
-            pingCommand.handle(event);
-        }
-        
-        if (message.startsWith("!Buserinfo") || message.startsWith("!buserinfo")) {
-        	userinfoCommand.handle(event);
-        }
-        
-        if (message.startsWith("!Bclear") || message.startsWith("!bclear")) {
-        	clearCommand.handle(event);
-        }
-        
-        if (message.startsWith("!Bavatar") || message.startsWith("!bavatar")) {
-        	avatarCommand.handle(event);
-        }
-        
-        if (message.equalsIgnoreCase("!Bservericon")) {
-        	servericonCommand.handle(event);
-        }
-        
-        if (message.startsWith("!Bremind") || message.startsWith("!bremind")) {
-        	remindCommand.handle(event);
-        }
-        
+    public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+    	switch (event.getName()) {
+    		
+    	case "ping" -> pingCommand.handle(event);
+    	case "help" -> helpCommand.handle(event);
+    	case "userinfo" -> userinfoCommand.handle(event);
+    	case "clear" -> clearCommand.handle(event);
+    	case "avatar" -> avatarCommand.handle(event);
+    	case "servericon" -> servericonCommand.handle(event);
+    	case "remind" -> remindCommand.handle(event);
+    	
+    	}
     }
 }

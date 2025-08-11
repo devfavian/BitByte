@@ -1,54 +1,20 @@
 package usercommands;
 import utils.Command;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 public class RemindCommand implements Command {
 	@Override
-	public void handle(MessageReceivedEvent event) {
-		String raw = event.getMessage().getContentRaw().trim();
-		String[] args = raw.split("\\s+", 3);
+	public void handle(SlashCommandInteractionEvent event) {
 		
-		EmbedBuilder embed = new EmbedBuilder();
 		String mention = event.getMember().getAsMention();
 		String display = event.getMember().getEffectiveName();
 		String avatar  = event.getMember().getEffectiveAvatarUrl();
 		
-		if(args.length < 3) {
-			embed
-			.setColor(new java.awt.Color(0xED4245))
-			.setAuthor("Reminder error — " + display, null, avatar)
-			.setTitle("⏰ Invalid syntax")
-			.addField("Usage", "`!Bremind <seconds> <message>`", false)
-			.addField("Example", "`!Bremind 60 Drink water`", false)
-			.setTimestamp(java.time.Instant.now());
-			event.getChannel().sendMessageEmbeds(embed.build()).queue();
-			return;
-		}
-		
-		
-		int time;
-		
-		try {
-			time = Integer.parseInt(args[1]);
-		}catch (NumberFormatException e) {     
-            embed
-            .setColor(new java.awt.Color(0xED4245)) // red "fail"
-            .setAuthor("Reminder error — " + display, null, avatar)
-            .setTitle("⏰ Invalid time")
-            .setDescription("Time value should be a number.\n> **" + args[1] + "** is not valid.")
-            .addField("Usage", "`!Bremind <seconds> <message>`", false)
-            .addField("Example", "`!Bremind 60 Drink water`", false)
-            .setTimestamp(java.time.Instant.now());
-            event.getChannel().sendMessageEmbeds(embed.build()).queue();
-            return;
-		}
-		
-		
-		//correct way
-		
-		String text = args[2];
+		int time = event.getOption("minutes").getAsInt();
 		long whenEpoch = java.time.Instant.now().plusSeconds(time).getEpochSecond();
+		
+		String text = event.getOption("message").getAsString();
 
 		// 1) confirm
 		EmbedBuilder confirm = new EmbedBuilder()
@@ -59,7 +25,7 @@ public class RemindCommand implements Command {
 		        .addField("Deliver", "<t:" + whenEpoch + ":R> • <t:" + whenEpoch + ":f>", false)
 		        .setTimestamp(java.time.Instant.now()); // orario in basso
 
-		event.getChannel().sendMessageEmbeds(confirm.build()).queue();
+		event.replyEmbeds(confirm.build()).queue();
 
 		// 2) delivery
 		EmbedBuilder deliver = new EmbedBuilder()

@@ -1,7 +1,7 @@
 package utils;
 
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 public interface Command {
-	void handle(MessageReceivedEvent event);
+	void handle(SlashCommandInteractionEvent event);
 }
