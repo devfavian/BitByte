@@ -35,3 +35,4 @@
 - Encountered some difficulties with the /clear command.
 - Had issues with /userinfo — fixed it by using getOption for the "member" as well, ensuring that all information is retrieved from the targeted user. Without this change, the bot was pulling some data from the command executor and some from the mentioned user, causing it to fail.
 - I'm working on handling exceptions. Right now, the bot is unstable — for example, it will crash if you try to use it in DMs.
+- Removed the prefix "B" before commands.

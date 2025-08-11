@@ -13,13 +13,13 @@ This project is in its early stages and currently supports a single test command
 
 ## 📜 Commands
 
-- `/Bhelp` → Replies with a list of command
-- `/Bping` → Replies with `pong!`
-- `/Buserinfo` → Displays information about you or a mentioned user
-- `/Bclear` → Deletes a specified number of messages (admin only)
-- `/Bavatar` → Shows the avatar of yourself or a mentioned user in high resolution
-- `/Bservericon` → Shows the server icon in high resolution (1024px)
-- `/Bremind <seconds> <message>` → Schedules a reminder and pings you when it’s due
+- `/help` → Replies with a list of command
+- `/ping` → Replies with `pong!`
+- `/userinfo` → Displays information about you or a mentioned user
+- `/clear` → Deletes a specified number of messages (admin only)
+- `/avatar` → Shows the avatar of yourself or a mentioned user in high resolution
+- `/servericon` → Shows the server icon in high resolution (1024px)
+- `/remind <seconds> <message>` → Schedules a reminder and pings you when it’s due
 
 More utilities and fun commands coming soon!
 
@@ -68,13 +68,13 @@ BitByte è un bot Discord scritto in Java con la libreria JDA.
 
 ## 📜 Commands
 
-- `/Bhelp` → Risponde la lista di comandi di ByteBot
-- `/Bping` → Risponde con `pong!`
-- `/Buserinfo` → Mostra informazioni su di te o su un'altro utente
-- `/Bclear` → Elimina una certa quantità di messaggi (solo admin)
-- `/Bavatar` → Mostra il tuo avatar o quello di un'altro utente in alta risoluzione (1024px)
-- `/Bservericon` → Mostra l'icona del server in alta risoluzione (1024px)
-- `/Bremind <seconds> <message>` → Imposta un promemoria
+- `/help` → Risponde la lista di comandi di ByteBot
+- `/ping` → Risponde con `pong!`
+- `/userinfo` → Mostra informazioni su di te o su un'altro utente
+- `/clear` → Elimina una certa quantità di messaggi (solo admin)
+- `/avatar` → Mostra il tuo avatar o quello di un'altro utente in alta risoluzione (1024px)
+- `/servericon` → Mostra l'icona del server in alta risoluzione (1024px)
+- `/remind <seconds> <message>` → Imposta un promemoria
 
 # 🚀 Esecuzione
 
