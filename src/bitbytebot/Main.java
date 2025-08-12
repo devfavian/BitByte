@@ -10,7 +10,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        JDA jda = JDABuilder.createDefault("YOUR_TOKEN")		//discord developers bot token
+        JDA jda = JDABuilder.createDefault("YOUR_DISCORD_TOKEN")		//discord developers bot token
         		  .enableIntents(   GatewayIntent.GUILD_MEMBERS,
         				    		GatewayIntent.GUILD_PRESENCES,
         				    		GatewayIntent.GUILD_MESSAGES,

@@ -46,3 +46,9 @@
 - I refined the Userinfo's design, probably bringing it to its final version.
 - I had issues with Online status and roles.
 - I had issues with time counter, but i learned how to manage them.
+- I Fixed crash when bot was used outside a server (check class "Check" in utils package)
+
+
+	- I’ve decided to slow down development on this bot, as it has already taught me a lot and served its purpose.
+	  I’ll be shifting my focus to other projects, so updates for this bot will become less frequent.
+	  The bot is hosted on a private VPS and you can invite it to your server. Feel free to contact me for upgrades, tips, or to report any issues!
