@@ -2,12 +2,16 @@ package usercommands;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.EmbedBuilder;
+import utils.Check;
 import utils.Command;
 
 public class PingCommand implements Command {
 	
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
+		
 		EmbedBuilder embed = new EmbedBuilder();
 		embed.setDescription("🏓 **Pong!**");
 		embed.setAuthor(event.getUser().getEffectiveName() + " want to play!", null, event.getUser().getEffectiveAvatarUrl());

@@ -1,4 +1,5 @@
 package admincommands;
+import utils.Check;
 import utils.Command;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 public class ClearCommand implements Command{
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
 		
 		if(!event.getMember().hasPermission(Permission.MESSAGE_MANAGE)) {
 			EmbedBuilder embed = new EmbedBuilder();
@@ -40,7 +43,7 @@ public class ClearCommand implements Command{
 		                success -> event.getHook().editOriginalEmbeds(new EmbedBuilder()
 		                        .setTitle("✅ Messages Deleted")
 		                        .setDescription(numMessages + " messages deleted successfully.")
-		                        .setColor(java.awt.Color.GREEN)
+		                        .setColor(new java.awt.Color(0x57F287))
 		                        .build()).queue(),
 		                failure -> event.getHook().editOriginalEmbeds(new EmbedBuilder()
 		                        .setTitle("❌ Error")

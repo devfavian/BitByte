@@ -1,5 +1,6 @@
 package usercommands;
 
+import utils.Check;
 import utils.Command;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -14,6 +15,8 @@ import java.util.Locale;
 public class UserinfoCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
 		
 		EmbedBuilder embed = new EmbedBuilder();
 		embed.setColor(new java.awt.Color(0x5865F2));

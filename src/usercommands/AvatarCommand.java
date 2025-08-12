@@ -1,4 +1,5 @@
 package usercommands;
+import utils.Check;
 import utils.Command;
 
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -9,6 +10,8 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 public class AvatarCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
 		
 		User target = event.getOption("user") != null
 				? event.getOption("user").getAsUser()

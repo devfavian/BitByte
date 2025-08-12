@@ -3,11 +3,14 @@ package usercommands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import utils.Check;
 import utils.Command;
 
 public class HelpCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
 		
 		final String invite = "https://discord.com/oauth2/authorize?client_id=1403010360847630336&permissions=8&integration_type=0&scope=applications.commands+bot";
 		final String github = "https://github.com/devfavian";

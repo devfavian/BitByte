@@ -1,4 +1,5 @@
 package usercommands;
+import utils.Check;
 import utils.Command;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -6,6 +7,8 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 public class RemindCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
 		
 		String mention = event.getMember().getAsMention();
 		String display = event.getMember().getEffectiveName();

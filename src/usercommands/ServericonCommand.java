@@ -1,4 +1,5 @@
 package usercommands;
+import utils.Check;
 import utils.Command;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -6,6 +7,9 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 public class ServericonCommand implements Command {
 	@Override
 	public void handle(SlashCommandInteractionEvent event) {
+		
+		if(!Check.GuildCheck(event)) return;
+		
 		EmbedBuilder embed = new EmbedBuilder();
 		embed.setTitle("🖼️ Server Icon");
 		embed.setColor(new java.awt.Color(0x5865F2));
