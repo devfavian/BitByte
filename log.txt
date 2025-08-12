@@ -41,3 +41,8 @@
 - I refined the AvatarCommand's design, probably bringing it to its final version.
 - I discovered that embed title can not contain mentions.
 - I refined the Servericon's design, probably bringing it to its final version.
+
+12/08/2025
+- I refined the Userinfo's design, probably bringing it to its final version.
+- I had issues with Online status and roles.
+- I had issues with time counter, but i learned how to manage them.
